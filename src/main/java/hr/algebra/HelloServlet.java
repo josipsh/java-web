@@ -1,4 +1,4 @@
-package hr.algebra.webshop;
+package hr.algebra;
 
 import java.io.*;
 
