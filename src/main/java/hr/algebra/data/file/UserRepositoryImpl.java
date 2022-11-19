@@ -1,11 +1,13 @@
 package hr.algebra.data.file;
 
 import hr.algebra.data.IRepository;
+import hr.algebra.models.Category;
 import hr.algebra.models.User;
 
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
+import java.util.Optional;
 
 public class UserRepositoryImpl implements IRepository<User> {
 
@@ -32,7 +34,8 @@ public class UserRepositoryImpl implements IRepository<User> {
 
     @Override
     public User getById(int id) {
-        return users.get(0);
+        Optional<User> user = users.stream().filter(x -> x.getId() == id).findFirst();
+        return user.orElseGet(() -> users.get(0));
     }
 
     @Override
