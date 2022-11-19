@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Optional;
 
-public class SubCategoryRepositoryImpl implements IRepository<SubCategory> {
+class SubCategoryRepositoryImpl implements IRepository<SubCategory> {
 
     private final ArrayList<SubCategory> subCategories;
 

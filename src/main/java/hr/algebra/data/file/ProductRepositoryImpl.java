@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Optional;
 
-public class ProductRepositoryImpl implements IRepository<Product> {
+class ProductRepositoryImpl implements IRepository<Product> {
     private final ArrayList<Product> products;
 
     public ProductRepositoryImpl() {

@@ -1,7 +1,6 @@
 package hr.algebra.data.file;
 
 import hr.algebra.data.IRepository;
-import hr.algebra.models.Category;
 import hr.algebra.models.User;
 
 import java.util.ArrayList;
@@ -9,7 +8,7 @@ import java.util.Collection;
 import java.util.List;
 import java.util.Optional;
 
-public class UserRepositoryImpl implements IRepository<User> {
+class UserRepositoryImpl implements IRepository<User> {
 
     private final List<User> users;
 

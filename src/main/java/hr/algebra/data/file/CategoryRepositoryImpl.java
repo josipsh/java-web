@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Optional;
 
-public class CategoryRepositoryImpl implements IRepository<Category> {
+class CategoryRepositoryImpl implements IRepository<Category> {
 
     private final ArrayList<Category> categories;
 
