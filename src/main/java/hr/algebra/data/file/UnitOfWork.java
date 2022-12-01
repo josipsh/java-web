@@ -8,6 +8,8 @@ import hr.algebra.models.Product;
 import hr.algebra.models.SubCategory;
 import hr.algebra.models.User;
 
+import java.io.IOException;
+
 public class UnitOfWork implements IUnitOfWork {
 
     @Override
@@ -31,7 +33,7 @@ public class UnitOfWork implements IUnitOfWork {
     }
 
     @Override
-    public IBlobRepository blobs() {
+    public IBlobRepository blobs() throws IOException {
         return new BlobRepositoryImpl();
     }
 }

@@ -5,6 +5,8 @@ import hr.algebra.models.Product;
 import hr.algebra.models.SubCategory;
 import hr.algebra.models.User;
 
+import java.io.IOException;
+
 public interface IUnitOfWork {
     IRepository<User> users();
 
@@ -14,5 +16,5 @@ public interface IUnitOfWork {
 
     IRepository<Category> categories();
 
-    IBlobRepository blobs();
+    IBlobRepository blobs() throws IOException;
 }
