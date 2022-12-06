@@ -1,3 +1,4 @@
+<%@ page import="hr.algebra.viewModel.PageType" %>
 <%@ page contentType="text/html;charset=UTF-8" %>
 <%@ taglib prefix="algebra" uri="https://algebra.hr/web-shop" %>
 
@@ -8,7 +9,7 @@
         <link href="${pageContext.request.contextPath}/Styles/CustomStyleSheet.css" rel="stylesheet" />
     </head>
     <body>
-        <algebra:NavigationHeader />
+        <algebra:NavigationHeader activePage="<%= PageType.Home %>" />
         <div class="flex flex-row min-h-screen max-h-fit">
             <algebra:CategoryView />
             <div class="flex flex-wrap flex-grow justify-evenly bg-green-500">

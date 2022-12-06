@@ -4,9 +4,29 @@
     <short-name>test</short-name>
     <uri>https://algebra.hr/web-shop</uri>
     <tag>
-        <name>greet</name>
-        <tag-class>hr.algebra.utils.tags.TestTag</tag-class>
+        <name>IsLinkActive</name>
+        <tag-class>hr.algebra.utils.tags.IsLinkActive</tag-class>
         <body-content>empty</body-content>
+        <attribute>
+            <name>current</name>
+            <rtexprvalue>true</rtexprvalue>
+            <type>hr.algebra.viewModel.PageType</type>
+        </attribute>
+        <attribute>
+            <name>active</name>
+            <rtexprvalue>true</rtexprvalue>
+            <type>hr.algebra.viewModel.PageType</type>
+        </attribute>
+        <attribute>
+            <name>activeColorClass</name>
+            <rtexprvalue>true</rtexprvalue>
+            <type>java.lang.String</type>
+        </attribute>
+        <attribute>
+            <name>passiveColorClass</name>
+            <rtexprvalue>true</rtexprvalue>
+            <type>java.lang.String</type>
+        </attribute>
     </tag>
 
     <tag-file>
