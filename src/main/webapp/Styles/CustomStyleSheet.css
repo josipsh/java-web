@@ -1,0 +1,15 @@
+.grid-cols-2-auto {
+    grid-template-columns: auto auto;
+}
+
+.grid-cols-3-auto {
+    grid-template-columns: auto auto auto;
+}
+
+.grid-cols-4-auto {
+    grid-template-columns: auto auto auto auto;
+}
+
+.w-70 {
+    width: 70rem;
+}
