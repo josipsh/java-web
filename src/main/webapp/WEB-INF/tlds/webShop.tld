@@ -11,7 +11,7 @@
 
     <tag-file>
         <name>NavigationHeader</name>
-        <path>/WEB-INF/tags/navigationHeader.tag</path>
+        <path>/WEB-INF/tags/NavigationHeader.tag</path>
     </tag-file>
 
     <tag-file>
@@ -21,6 +21,6 @@
 
     <tag-file>
         <name>CategoryView</name>
-        <path>/WEB-INF/tags/categoryView.tag</path>
+        <path>/WEB-INF/tags/CategoryView.tag</path>
     </tag-file>
 </taglib>

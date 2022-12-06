@@ -3,12 +3,12 @@
 
 <html>
     <head>
-        <title>Product</title>
+        <title>Cart</title>
         <link href="${pageContext.request.contextPath}/Styles/output.css" rel="stylesheet" />
         <link href="${pageContext.request.contextPath}/Styles/CustomStyleSheet.css" rel="stylesheet" />
     </head>
     <body>
         <algebra:NavigationHeader />
-        <h1>This is product page</h1>
+        <h1>Cart</h1>
     </body>
 </html>
