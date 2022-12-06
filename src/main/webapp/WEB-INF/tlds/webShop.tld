@@ -13,4 +13,14 @@
         <name>NavigationHeader</name>
         <path>/WEB-INF/tags/navigationHeader.tag</path>
     </tag-file>
+
+    <tag-file>
+        <name>CatalogProductView</name>
+        <path>/WEB-INF/tags/CatalogProductView.tag</path>
+    </tag-file>
+
+    <tag-file>
+        <name>CategoryView</name>
+        <path>/WEB-INF/tags/categoryView.tag</path>
+    </tag-file>
 </taglib>

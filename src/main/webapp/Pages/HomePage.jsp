@@ -9,6 +9,11 @@
 </head>
 <body>
     <algebra:NavigationHeader />
-    <h1>This is home page</h1>
+    <div class="flex flex-row min-h-screen max-h-fit">
+        <algebra:CategoryView />
+        <div class="flex flex-wrap flex-grow justify-evenly bg-green-500">
+            <algebra:CatalogProductView price="599.99" title="This is title" imageLink="file:///D:/_ucenje/6_semestar/javaWeb/ProjectFrontEnd/images/IMG_8221.JPG"/>
+        </div>
+    </div>
 </body>
 </html>
