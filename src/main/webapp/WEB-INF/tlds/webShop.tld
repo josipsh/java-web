@@ -43,4 +43,9 @@
         <name>CategoryView</name>
         <path>/WEB-INF/tags/CategoryView.tag</path>
     </tag-file>
+
+    <tag-file>
+        <name>CartHistoryCard</name>
+        <path>/WEB-INF/tags/CartHistoryItem.tag</path>
+    </tag-file>
 </taglib>
