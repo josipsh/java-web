@@ -13,4 +13,6 @@ public interface IUnitOfWork {
     IRepository<SubCategory> subCategories();
 
     IRepository<Category> categories();
+
+    IBlobRepository blobRepository();
 }
