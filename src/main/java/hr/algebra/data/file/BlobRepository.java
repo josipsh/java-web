@@ -6,11 +6,11 @@ import java.io.*;
 import java.nio.file.Files;
 
 public class BlobRepository implements IBlobRepository {
-    private final String DIR = "D:\\Pictures\\ojcar-7\\";
+    private final String DIR = "D:\\Pictures\\JavaWebImages\\";
 
     @Override
     public File getFile(String name) {
-        String fileName = DIR + name + ".png";
+        String fileName = DIR + name + ".JPG";
         File file = new File(fileName);
         if (!file.exists()){
             return null;

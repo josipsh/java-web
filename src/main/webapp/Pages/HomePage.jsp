@@ -10,10 +10,18 @@
     </head>
     <body>
         <algebra:NavigationHeader activePage="<%= PageType.Home %>" />
-        <div class="flex flex-row min-h-screen max-h-fit">
+        <div class="flex flex-row min-h-screen max-h-fit bg-dark-700">
             <algebra:CategoryView />
-            <div class="flex flex-wrap flex-grow justify-evenly bg-green-500">
-                <algebra:CatalogProductView price="599.99" title="This is title" imageLink="file:///D:/_ucenje/6_semestar/javaWeb/ProjectFrontEnd/images/IMG_8221.JPG"/>
+            <div class="flex flex-wrap flex-grow justify-evenly">
+                <algebra:CatalogProductView price="599.99" title="This is title" imageLink="IMG_8221"/>
+                <algebra:CatalogProductView price="599.99" title="This is title" imageLink="IMG_8221"/>
+                <algebra:CatalogProductView price="599.99" title="This is title" imageLink="IMG_8221"/>
+                <algebra:CatalogProductView price="599.99" title="This is title" imageLink="IMG_8221"/>
+                <algebra:CatalogProductView price="599.99" title="This is title" imageLink="IMG_8221"/>
+                <algebra:CatalogProductView price="599.99" title="This is title" imageLink="IMG_8221"/>
+                <algebra:CatalogProductView price="599.99" title="This is title" imageLink="IMG_8221"/>
+                <algebra:CatalogProductView price="599.99" title="This is title" imageLink="IMG_8221"/>
+                <algebra:CatalogProductView price="599.99" title="This is title" imageLink="IMG_8221"/>
             </div>
         </div>
     </body>

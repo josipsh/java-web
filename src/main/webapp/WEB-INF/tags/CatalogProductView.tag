@@ -4,17 +4,17 @@
 <%@attribute name="title" %>
 <%@attribute name="price" %>
 
-<div class="max-w-xs h-fit bg-slate-500 rounded-lg shadow-md mt-4 mr-4 mb-4 ml-4">
-    <img class="rounded-t-lg" src="${imageLink}" alt="Image"/>
+<div class="max-w-xs h-fit bg-dark-400 rounded-lg shadow-md mt-4 mr-4 mb-4 ml-4">
+    <img class="rounded-t-lg" src="${pageContext.request.contextPath}/blob?name=${imageLink}" alt="Image"/>
     <div class="px-5 pb-5">
-        <h5 class="text-xl font-bold tracking-tight text-gray-900 pt-3 pb-3">
+        <h5 class="text-xl font-bold tracking-tight text-light-200 pt-3 pb-3">
             ${title}
         </h5>
         <div class="flex items-center justify-between">
-            <span class="text-3xl font-bold text-gray-900 dark:text-white">
+            <span class="text-3xl font-bold text-light-50">
                 ${price}
             </span>
-            <button class="text-white bg-blue-700 hover:bg-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center">
+            <button class="w-fit text-primary-light bg-transparent border border-primary-light hover:bg-primary-dark hover:text-primary-light font-medium rounded-2xl text-sm px-5 py-2.5 mr-2 mb-2">
                 Add to cart
             </button>
         </div>
