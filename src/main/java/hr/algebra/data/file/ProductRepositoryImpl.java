@@ -1,36 +1,38 @@
 package hr.algebra.data.file;
 
-import hr.algebra.data.IRepository;
-import hr.algebra.models.Category;
+import hr.algebra.data.IProductRepository;
 import hr.algebra.models.Product;
-
 import java.util.ArrayList;
-import java.util.Collection;
+import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
-class ProductRepositoryImpl implements IRepository<Product> {
+class ProductRepositoryImpl implements IProductRepository {
     private final ArrayList<Product> products;
 
     public ProductRepositoryImpl() {
-        products = new ArrayList<>();
-        SubCategoryRepositoryImpl subCategoryRepo = new SubCategoryRepositoryImpl();
-
-        for (int i = 0; i < 10; i++) {
-            Product prod = new Product();
-
-            prod.setId(i);
-            prod.setTitle("Product " + i);
-            prod.setDescription("Product description " + i);
-            prod.setPrice(i * 5.6f);
-            prod.setSubcategory(subCategoryRepo.getById(i));
-
-            products.add(prod);
-        }
+        products = FakeDatabase.getProducts();
     }
 
     @Override
-    public Collection<Product> getAll() {
+    public List<Product> getAll() {
         return new ArrayList<>(products);
+    }
+
+    @Override
+    public List<Product> getAllInCategory(String categoryLink) {
+        return products
+                .stream()
+                .filter(x -> x.getSubcategory().getCategory().getLink().equals(categoryLink))
+                .collect(Collectors.toList());
+    }
+
+    @Override
+    public List<Product> getAllInSubcategory(String subcategoryLink) {
+        return products
+                .stream()
+                .filter(x -> x.getSubcategory().getLink().equals(subcategoryLink))
+                .collect(Collectors.toList());
     }
 
     @Override
@@ -51,6 +53,7 @@ class ProductRepositoryImpl implements IRepository<Product> {
                 item.setTitle(entity.getTitle());
                 item.setDescription(entity.getDescription());
                 item.setPrice(entity.getPrice());
+                item.setSubcategoryId(entity.getSubcategoryId());
                 item.setSubcategory(entity.getSubcategory());
             }
         }

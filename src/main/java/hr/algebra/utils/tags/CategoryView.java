@@ -27,18 +27,26 @@ public class CategoryView extends SimpleTagSupport {
                 out.println("<button id=\"expandButton_" + category.getLink() + "\" class=\"flex pl-1 items-center w-[24px] h-[24px]\" type=\"button\">");
                 out.println("<img src=\"" + contextPath + "/Icons/expand_right_24.svg\" alt=\"Expand icon\" />");
                 out.println("</button>");
-                out.println("<a href=\"?category=${category.link}\" class=\"text-light-300 text-lg self-center font-bold uppercase whitespace-nowrap\">");
+                out.println("<a href=\""+ contextPath +"/?category=" + category.getLink() + "\" class=\"text-light-300 text-lg self-center font-bold uppercase whitespace-nowrap\">");
                 out.println(category.getDisplayName());
                 out.println("</a>");
                 out.println("</div>");
                 out.println("<div id=\"subcategories_" + category.getLink() + "\" class=\"flex-col pl-12 hidden\">");
-                renderSubcategories(out, (ArrayList<SubCategory>) category.getSubcategories());
+                renderSubcategories(out, contextPath, (ArrayList<SubCategory>) category.getSubcategories());
                 out.println("</div>");
                 out.println("</div>");
                 appendJavaScript(out, category);
             }
         } catch (Exception ex) {
             throw new JspException("Error in CategoryView tag.", ex);
+        }
+    }
+
+    private static void renderSubcategories(JspWriter out, String contextPath, ArrayList<SubCategory> subCategories) throws IOException {
+        for (SubCategory sub : subCategories) {
+            out.println("<a href=\""+ contextPath +"/?subcategory=" + sub.getLink() + "\" class=\"text-light-300 uppercase py-[0.15rem] whitespace-nowrap\">");
+            out.println(sub.getDisplayName());
+            out.println("</a>");
         }
     }
 
@@ -79,14 +87,6 @@ public class CategoryView extends SimpleTagSupport {
         out.println("}");
         out.println("}");
         out.println("</script>");
-    }
-
-    private static void renderSubcategories(JspWriter out, ArrayList<SubCategory> subCategories) throws IOException {
-        for (SubCategory sub : subCategories) {
-            out.println("<a href=\"?subcategory=${subcategory.link}\" class=\"text-light-300 uppercase py-[0.15rem] whitespace-nowrap\">");
-            out.println(sub.getDisplayName());
-            out.println("</a>");
-        }
     }
 
     public void setContextPath(String contextPath) {

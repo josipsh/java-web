@@ -3,7 +3,7 @@ package hr.algebra.data.file;
 import hr.algebra.data.IRepository;
 import hr.algebra.models.SubCategory;
 import java.util.ArrayList;
-import java.util.Collection;
+import java.util.List;
 import java.util.Optional;
 
 class SubCategoryRepositoryImpl implements IRepository<SubCategory> {
@@ -15,7 +15,7 @@ class SubCategoryRepositoryImpl implements IRepository<SubCategory> {
     }
 
     @Override
-    public Collection<SubCategory> getAll() {
+    public List<SubCategory> getAll() {
         return new ArrayList<>(subCategories);
     }
 

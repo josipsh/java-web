@@ -1,6 +1,7 @@
 <%@ page import="hr.algebra.viewModel.PageType" %>
 <%@ page contentType="text/html;charset=UTF-8" %>
 <%@ taglib prefix="algebra" uri="https://algebra.hr/web-shop" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
 <html>
     <head>
@@ -19,15 +20,12 @@
             </div>
 
             <div class="flex flex-row h-fit flex-wrap flex-grow justify-evenly">
-                <algebra:CatalogProductView price="599.99" title="This is title" imageLink="IMG_8221"/>
-                <algebra:CatalogProductView price="599.99" title="This is title" imageLink="IMG_8221"/>
-                <algebra:CatalogProductView price="599.99" title="This is title" imageLink="IMG_8221"/>
-                <algebra:CatalogProductView price="599.99" title="This is title" imageLink="IMG_8221"/>
-                <algebra:CatalogProductView price="599.99" title="This is title" imageLink="IMG_8221"/>
-                <algebra:CatalogProductView price="599.99" title="This is title" imageLink="IMG_8221"/>
-                <algebra:CatalogProductView price="599.99" title="This is title" imageLink="IMG_8221"/>
-                <algebra:CatalogProductView price="599.99" title="This is title" imageLink="IMG_8221"/>
-                <algebra:CatalogProductView price="599.99" title="This is title" imageLink="IMG_8221"/>
+                <c:forEach items="${sessionScope.products}" var="product">
+                    <algebra:CatalogProductView
+                            price="${product.price}"
+                            title="${product.title}"
+                            imageLink="${product.imageName}"/>
+                </c:forEach>
             </div>
         </div>
     </body>

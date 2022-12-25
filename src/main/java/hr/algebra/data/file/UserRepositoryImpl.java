@@ -2,9 +2,7 @@ package hr.algebra.data.file;
 
 import hr.algebra.data.IRepository;
 import hr.algebra.models.User;
-
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
 import java.util.Optional;
 
@@ -27,7 +25,7 @@ class UserRepositoryImpl implements IRepository<User> {
     }
 
     @Override
-    public Collection<User> getAll() {
+    public List<User> getAll() {
         return new ArrayList<>(users);
     }
 

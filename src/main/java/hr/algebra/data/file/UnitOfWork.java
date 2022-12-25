@@ -1,10 +1,10 @@
 package hr.algebra.data.file;
 
 import hr.algebra.data.IBlobRepository;
+import hr.algebra.data.IProductRepository;
 import hr.algebra.data.IRepository;
 import hr.algebra.data.IUnitOfWork;
 import hr.algebra.models.Category;
-import hr.algebra.models.Product;
 import hr.algebra.models.SubCategory;
 import hr.algebra.models.User;
 
@@ -16,7 +16,7 @@ public class UnitOfWork implements IUnitOfWork {
     }
 
     @Override
-    public IRepository<Product> products() {
+    public IProductRepository products() {
         return new ProductRepositoryImpl();
     }
 

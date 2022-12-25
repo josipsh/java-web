@@ -4,18 +4,21 @@ public class Product {
     private int id;
     private String title;
     private String description;
+    private String imageName;
     private float price;
+    private int subcategoryId;
     private SubCategory subcategory;
 
     public Product() {
     }
 
-    public Product(int id, String title, String description, float price, SubCategory subcategory) {
+    public Product(int id, String title, String description, String imageName, float price, int subcategoryId) {
         this.id = id;
         this.title = title;
         this.description = description;
+        this.imageName = imageName;
         this.price = price;
-        this.subcategory = subcategory;
+        this.subcategoryId = subcategoryId;
     }
 
     public int getId() {
@@ -30,13 +33,19 @@ public class Product {
         return description;
     }
 
+    public String getImageName() {
+        return imageName;
+    }
+
     public float getPrice() {
         return price;
     }
 
-    public SubCategory getSubcategory() {
-        return subcategory;
+    public int getSubcategoryId() {
+        return subcategoryId;
     }
+
+    public SubCategory getSubcategory() { return subcategory; }
 
     public void setId(int id) {
         this.id = id;
@@ -50,8 +59,16 @@ public class Product {
         this.description = description;
     }
 
+    public void setImageName(String imageName) {
+        this.imageName = imageName;
+    }
+
     public void setPrice(float price) {
         this.price = price;
+    }
+
+    public void setSubcategoryId(int subcategoryId) {
+        this.subcategoryId = subcategoryId;
     }
 
     public void setSubcategory(SubCategory subcategory) {
