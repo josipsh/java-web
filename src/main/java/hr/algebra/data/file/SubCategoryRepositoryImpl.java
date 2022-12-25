@@ -1,9 +1,7 @@
 package hr.algebra.data.file;
 
 import hr.algebra.data.IRepository;
-import hr.algebra.models.Category;
 import hr.algebra.models.SubCategory;
-
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Optional;
@@ -13,13 +11,7 @@ class SubCategoryRepositoryImpl implements IRepository<SubCategory> {
     private final ArrayList<SubCategory> subCategories;
 
     public SubCategoryRepositoryImpl() {
-        subCategories = new ArrayList<>();
-        CategoryRepositoryImpl categoryRepo = new CategoryRepositoryImpl();
-
-        for (int i = 0; i < 10; i++) {
-            SubCategory sub = new SubCategory(i, "SubCategory" + i, categoryRepo.getById(1));
-            subCategories.add(sub);
-        }
+        subCategories = FakeDatabase.getSubcategories();
     }
 
     @Override
@@ -42,7 +34,8 @@ class SubCategoryRepositoryImpl implements IRepository<SubCategory> {
     public void edit(SubCategory entity) {
         for (SubCategory item : subCategories) {
             if (item.getId() == entity.getId()){
-                item.setName(entity.getName());
+                item.setDisplayName(entity.getDisplayName());
+                item.setLink(entity.getLink());
                 item.setCategory(entity.getCategory());
             }
         }

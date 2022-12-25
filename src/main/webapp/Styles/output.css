@@ -427,6 +427,7 @@ video {
   --tw-skew-y: 0;
   --tw-scale-x: 1;
   --tw-scale-y: 1;
+  --tw-scroll-snap-strictness: proximity;
   --tw-ring-offset-width: 0px;
   --tw-ring-offset-color: #fff;
   --tw-ring-color: rgb(59 130 246 / 0.5);
@@ -446,6 +447,7 @@ video {
   --tw-skew-y: 0;
   --tw-scale-x: 1;
   --tw-scale-y: 1;
+  --tw-scroll-snap-strictness: proximity;
   --tw-ring-offset-width: 0px;
   --tw-ring-offset-color: #fff;
   --tw-ring-color: rgb(59 130 246 / 0.5);
@@ -568,6 +570,10 @@ video {
   margin-top: 1.5rem;
 }
 
+.ml-2 {
+  margin-left: 0.5rem;
+}
+
 .block {
   display: block;
 }
@@ -608,6 +614,10 @@ video {
   height: 2.5rem;
 }
 
+.h-\[24px\] {
+  height: 24px;
+}
+
 .max-h-fit {
   max-height: fit-content;
 }
@@ -643,6 +653,10 @@ video {
 
 .w-\[56rem\] {
   width: 56rem;
+}
+
+.w-\[24px\] {
+  width: 24px;
 }
 
 .max-w-xs {
@@ -993,6 +1007,26 @@ video {
   padding-right: 5rem;
 }
 
+.py-6 {
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+}
+
+.px-11 {
+  padding-left: 2.75rem;
+  padding-right: 2.75rem;
+}
+
+.py-1 {
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+}
+
+.py-\[0\.15rem\] {
+  padding-top: 0.15rem;
+  padding-bottom: 0.15rem;
+}
+
 .pl-3 {
   padding-left: 0.75rem;
 }
@@ -1057,12 +1091,40 @@ video {
   padding-top: 0.5rem;
 }
 
+.pl-2 {
+  padding-left: 0.5rem;
+}
+
+.pl-4 {
+  padding-left: 1rem;
+}
+
+.pl-5 {
+  padding-left: 1.25rem;
+}
+
+.pl-10 {
+  padding-left: 2.5rem;
+}
+
+.pl-12 {
+  padding-left: 3rem;
+}
+
+.pb-6 {
+  padding-bottom: 1.5rem;
+}
+
 .text-center {
   text-align: center;
 }
 
 .text-right {
   text-align: right;
+}
+
+.align-middle {
+  vertical-align: middle;
 }
 
 .text-xl {
@@ -1085,6 +1147,11 @@ video {
   line-height: 2.25rem;
 }
 
+.text-lg {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+}
+
 .font-semibold {
   font-weight: 600;
 }
@@ -1103,6 +1170,10 @@ video {
 
 .font-light {
   font-weight: 300;
+}
+
+.uppercase {
+  text-transform: uppercase;
 }
 
 .leading-normal {
@@ -1176,6 +1247,11 @@ video {
 .text-primary-light {
   --tw-text-opacity: 1;
   color: rgb(110 141 164 / var(--tw-text-opacity));
+}
+
+.text-light-300 {
+  --tw-text-opacity: 1;
+  color: rgb(161 156 171 / var(--tw-text-opacity));
 }
 
 .placeholder\:text-light-900::-moz-placeholder {

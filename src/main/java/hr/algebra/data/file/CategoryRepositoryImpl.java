@@ -12,12 +12,7 @@ class CategoryRepositoryImpl implements IRepository<Category> {
     private final ArrayList<Category> categories;
 
     public CategoryRepositoryImpl() {
-        categories = new ArrayList<>();
-
-        for (int i = 0; i < 10; i++) {
-            Category cat = new Category(i, "Category " + i);
-            categories.add(cat);
-        }
+        categories = FakeDatabase.getCategories();
     }
 
     @Override
@@ -40,7 +35,9 @@ class CategoryRepositoryImpl implements IRepository<Category> {
     public void edit(Category entity) {
         for (Category item : categories) {
             if (item.getId() == entity.getId()) {
-                item.setName(entity.getName());
+                item.setDisplayName(entity.getDisplayName());
+                item.setLink(entity.getLink());
+                item.setSubcategories(entity.getSubcategories());
             }
         }
     }

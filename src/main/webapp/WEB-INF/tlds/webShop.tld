@@ -28,7 +28,16 @@
             <type>java.lang.String</type>
         </attribute>
     </tag>
-
+    <tag>
+        <name>CategoryView</name>
+        <tag-class>hr.algebra.utils.tags.CategoryView</tag-class>
+        <body-content>empty</body-content>
+        <attribute>
+            <name>contextPath</name>
+            <rtexprvalue>true</rtexprvalue>
+            <type>java.lang.String</type>
+        </attribute>
+    </tag>
     <tag-file>
         <name>NavigationHeader</name>
         <path>/WEB-INF/tags/NavigationHeader.tag</path>
@@ -37,11 +46,6 @@
     <tag-file>
         <name>CatalogProductView</name>
         <path>/WEB-INF/tags/CatalogProductView.tag</path>
-    </tag-file>
-
-    <tag-file>
-        <name>CategoryView</name>
-        <path>/WEB-INF/tags/CategoryView.tag</path>
     </tag-file>
 
     <tag-file>
