@@ -22,6 +22,7 @@
             <div class="flex flex-row h-fit flex-wrap flex-grow justify-evenly">
                 <c:forEach items="${sessionScope.products}" var="product">
                     <algebra:CatalogProductView
+                            id="${product.id}"
                             price="${product.price}"
                             title="${product.title}"
                             imageLink="${product.imageName}"/>
