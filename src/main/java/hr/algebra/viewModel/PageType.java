@@ -3,7 +3,9 @@ package hr.algebra.viewModel;
 public enum PageType {
     Home(0),
     Cart(1),
-    Profile (2);
+    Profile (2),
+    Register(-1),
+    Login(-2);
 
     private final int value;
 
