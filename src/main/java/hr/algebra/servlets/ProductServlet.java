@@ -3,6 +3,7 @@ package hr.algebra.servlets;
 import hr.algebra.data.IUnitOfWork;
 import hr.algebra.data.RepoFactory;
 import hr.algebra.models.Product;
+import hr.algebra.utils.Exceptions.DataBaseException;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -35,7 +36,12 @@ public class ProductServlet extends HttpServlet {
             return;
         }
 
-        Product product = uow.products().getById(productId);
+        Product product = null;
+        try {
+            product = uow.products().getById(productId);
+        } catch (DataBaseException e) {
+            res.setStatus(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
+        }
 
         req.getSession().setAttribute("product", product);
         res.setContentType("text/html");

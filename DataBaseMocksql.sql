@@ -33,8 +33,8 @@ insert Product ([Title], [Description], [ImageName], [Price], [SubcategoryId]) v
 insert Product ([Title], [Description], [ImageName], [Price], [SubcategoryId]) values ('Title15', 'Description 16 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam libero diam, pellentesque sed vehicula in, laoreet nec sapien. Curabitur dapibus mauris libero, sed facilisis purus aliquet condimentum. Integer ultrices metus venenatis, interdum enim id, ultricies magna. Nunc enim leo, tristique sit amet nulla et, facilisis molestie ex. Pellentesque sollicitudin enim sed mi malesuada dapibus. Duis nec urna faucibus nulla elementum gravida non sit amet nunc. Nam varius quam eget quam luctus lobortis.', 'IMG_8201', 15.99, 8)
 go
 
-insert Roles ([RoleName]) values ('Customer')
-insert Roles ([RoleName]) values ('Admin')
+insert Roles ([RoleName]) values ('CUSTOMER')
+insert Roles ([RoleName]) values ('ADMIN')
 go
 
 insert Users ([FirstName], [LastName], [Email], [Password], [RoleId]) values ('Pero', 'Peric', 'pero.peric@gmail.com', 'test123', 2)

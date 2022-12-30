@@ -1,17 +1,17 @@
 package hr.algebra.models;
 
-import java.util.List;
+import java.util.Set;
 
 public class Category {
     private int id;
     private String displayName;
     private String link;
-    private List<SubCategory> subcategories;
+    private Set<SubCategory> subcategories;
 
     public Category() {
     }
 
-    public Category(int id, String displayName, String link, List<SubCategory> subcategories) {
+    public Category(int id, String displayName, String link, Set<SubCategory> subcategories) {
         this.id = id;
         this.displayName = displayName;
         this.link = link;
@@ -42,11 +42,11 @@ public class Category {
         this.link = link;
     }
 
-    public List<SubCategory> getSubcategories() {
+    public Set<SubCategory> getSubcategories() {
         return subcategories;
     }
 
-    public void setSubcategories(List<SubCategory> subcategories) {
+    public void setSubcategories(Set<SubCategory> subcategories) {
         this.subcategories = subcategories;
     }
 }

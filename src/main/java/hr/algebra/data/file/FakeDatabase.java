@@ -5,6 +5,8 @@ import hr.algebra.models.Product;
 import hr.algebra.models.SubCategory;
 
 import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Set;
 
 public class FakeDatabase {
     private static final ArrayList<Category> categories = initCategories();
@@ -35,7 +37,7 @@ public class FakeDatabase {
     private static ArrayList<Category> initCategories(){
         ArrayList<Category> _categories = new ArrayList<>();
         for (int i = 0; i < 5; i++) {
-            Category cat = new Category(i, "Category " + i, "Category_" + i, new ArrayList<>());
+            Category cat = new Category(i, "Category " + i, "Category_" + i, new HashSet<>());
             _categories.add(cat);
         }
 
@@ -45,7 +47,7 @@ public class FakeDatabase {
         ArrayList<SubCategory> _subCategories = new ArrayList<>();
 
         for (Category cat : categories) {
-            ArrayList<SubCategory> _sub = new ArrayList<>();
+            Set<SubCategory> _sub = new HashSet<>();
 
             for (int i = 0; i < 10; i++) {
                 SubCategory sub = new SubCategory(i, "SubCategory " + i, "SubCategory_" + i, cat.getId());
@@ -70,7 +72,7 @@ public class FakeDatabase {
             prod.setTitle("Product " + i);
             prod.setDescription("Product description " + i);
             prod.setImageName(getImageName());
-            prod.setPrice(i * 5.6f);
+            prod.setPrice(i * 5.7f);
             prod.setSubcategoryId(subCatId);
             prod.setSubcategory(subCategories.get(subCatId));
 

@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "https://hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="hr.algebra.models.Product" table="Product">
+
+        <id name="id" type="int">
+            <column name="ID" />
+            <generator class="identity" />
+        </id>
+        <property name="title" type="java.lang.String">
+            <column name="Title" />
+        </property>
+        <property name="description" type="java.lang.String">
+            <column name="Description" />
+        </property>
+        <property name="imageName" type="java.lang.String">
+            <column name="ImageName" />
+        </property>
+        <property name="price" type="java.lang.Float">
+            <column name="Price" />
+        </property>
+        <many-to-one name="subcategory" class="hr.algebra.models.SubCategory" lazy="false">
+            <column name="SubcategoryId" />
+        </many-to-one>
+    </class>
+</hibernate-mapping>

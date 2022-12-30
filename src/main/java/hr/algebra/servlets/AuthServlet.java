@@ -3,6 +3,8 @@ package hr.algebra.servlets;
 import hr.algebra.data.IUnitOfWork;
 import hr.algebra.data.RepoFactory;
 import hr.algebra.models.User;
+import hr.algebra.utils.Exceptions.DataBaseException;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -32,15 +34,19 @@ public class AuthServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse res) throws IOException {
-        if (isLogin(req.getRequestURI())){
-            login(req);
-        }
-        else if(isRegister(req.getRequestURI())){
-            register(req);
-        }else if(isLogOut(req.getRequestURI())){
-            req.getSession().invalidate();
-        }else {
-            res.setStatus(HttpServletResponse.SC_BAD_REQUEST);
+        try {
+            if (isLogin(req.getRequestURI())) {
+                login(req);
+            } else if (isRegister(req.getRequestURI())) {
+                register(req);
+            } else if (isLogOut(req.getRequestURI())) {
+                req.getSession().invalidate();
+            } else {
+                res.setStatus(HttpServletResponse.SC_BAD_REQUEST);
+                return;
+            }
+        }catch (DataBaseException ex){
+            res.setStatus(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
             return;
         }
 
@@ -55,7 +61,7 @@ public class AuthServlet extends HttpServlet {
         req.getSession().setAttribute("user", user);
     }
 
-    private void register(HttpServletRequest req) {
+    private void register(HttpServletRequest req) throws DataBaseException {
         User user = new User();
         user.setFirstName(req.getParameter("firstName"));
         user.setLastName(req.getParameter("lastName"));

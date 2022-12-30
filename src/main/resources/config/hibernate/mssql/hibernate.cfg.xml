@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "https://hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <property name="hibernate.connection.driver_class">com.microsoft.sqlserver.jdbc.SQLServerDriver</property>
+        <property name="hibernate.connection.url">jdbc:sqlserver://localhost;databaseName=WebShopDb;encrypt=true;trustServerCertificate=true</property>
+        <property name="hibernate.connection.username">sa</property>
+        <property name="hibernate.connection.password">SQL</property>
+
+        <property name="hibernate.connection.pool_size">1</property>
+
+        <!-- org.hibernate.HibernateException: No CurrentSessionContext configured! -->
+        <property name="hibernate.current_session_context_class">thread</property>
+
+        <!-- Outputs the SQL queries, should be disabled in Production -->
+        <property name="hibernate.show_sql">true</property>
+
+        <property name="hibernate.dialect">org.hibernate.dialect.SQLServerDialect</property>
+
+        <mapping resource="config/hibernate/mssql/product.hbm.xml" />
+        <mapping resource="config/hibernate/mssql/Category.hbm.xml" />
+        <mapping resource="config/hibernate/mssql/subcategory.hbm.xml" />
+    </session-factory>
+</hibernate-configuration>

@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "https://hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="hr.algebra.models.Category" table="Category">
+
+        <id name="id">
+            <column name="ID" />
+            <generator class="identity" />
+        </id>
+        <property name="displayName">
+            <column name="DisplayName" />
+        </property>
+        <property name="link">
+            <column name="Link" />
+        </property>
+        <set name="subcategories" table="Subcategory" fetch="select" lazy="false">
+            <key>
+                <column name="CategoryId" not-null="true"/>
+            </key>
+            <one-to-many class="hr.algebra.models.SubCategory" />
+        </set>
+    </class>
+</hibernate-mapping>

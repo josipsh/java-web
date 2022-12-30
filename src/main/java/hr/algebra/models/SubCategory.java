@@ -5,7 +5,6 @@ public class SubCategory {
     private String displayName;
     private String link;
     private int categoryId;
-
     private Category category;
 
     public SubCategory() {

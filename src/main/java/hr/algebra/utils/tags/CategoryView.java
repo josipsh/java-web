@@ -4,13 +4,12 @@ import hr.algebra.data.IUnitOfWork;
 import hr.algebra.data.RepoFactory;
 import hr.algebra.models.Category;
 import hr.algebra.models.SubCategory;
-
 import javax.servlet.jsp.JspException;
 import javax.servlet.jsp.JspWriter;
 import javax.servlet.jsp.tagext.SimpleTagSupport;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Set;
 
 public class CategoryView extends SimpleTagSupport {
     private String contextPath;
@@ -32,7 +31,7 @@ public class CategoryView extends SimpleTagSupport {
                 out.println("</a>");
                 out.println("</div>");
                 out.println("<div id=\"subcategories_" + category.getLink() + "\" class=\"flex-col pl-12 hidden\">");
-                renderSubcategories(out, contextPath, (ArrayList<SubCategory>) category.getSubcategories());
+                renderSubcategories(out, contextPath, category.getSubcategories());
                 out.println("</div>");
                 out.println("</div>");
                 appendJavaScript(out, category);
@@ -42,7 +41,7 @@ public class CategoryView extends SimpleTagSupport {
         }
     }
 
-    private static void renderSubcategories(JspWriter out, String contextPath, ArrayList<SubCategory> subCategories) throws IOException {
+    private static void renderSubcategories(JspWriter out, String contextPath, Set<SubCategory> subCategories) throws IOException {
         for (SubCategory sub : subCategories) {
             out.println("<a href=\""+ contextPath +"/?subcategory=" + sub.getLink() + "\" class=\"text-light-300 uppercase py-[0.15rem] whitespace-nowrap\">");
             out.println(sub.getDisplayName());

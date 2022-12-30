@@ -3,7 +3,7 @@ package hr.algebra.servlets;
 import hr.algebra.data.IUnitOfWork;
 import hr.algebra.data.RepoFactory;
 import hr.algebra.models.Product;
-
+import hr.algebra.utils.Exceptions.DataBaseException;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -25,7 +25,13 @@ public class HomeServlet extends HttpServlet {
         String category = req.getParameter("category");
         String subcategory = req.getParameter("subcategory");
 
-        List<Product> products = fetchProducts(category, subcategory);
+        List<Product> products;
+        try {
+            products = fetchProducts(category, subcategory);
+        } catch (DataBaseException e) {
+            res.setStatus(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
+            return;
+        }
 
         req.getSession().setAttribute("products", products);
         res.setContentType("text/html");
@@ -34,7 +40,7 @@ public class HomeServlet extends HttpServlet {
         requestDispatcher.forward(req, res);
     }
 
-    private List<Product> fetchProducts(String category, String subcategory) {
+    private List<Product> fetchProducts(String category, String subcategory) throws DataBaseException {
         if (category != null && subcategory == null) {
             // filter by category
             return uow.products().getAllInCategory(category);
