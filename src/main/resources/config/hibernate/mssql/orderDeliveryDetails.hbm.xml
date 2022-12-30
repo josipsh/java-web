@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "https://hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="hr.algebra.models.OrderDeliveryDetails" table="OrderDeliveryDetails">
+        <id name="id">
+            <column name="Id"/>
+            <generator class="identity"/>
+        </id>
+
+        <property name="streetAddress">
+            <column name="StreetAddress"/>
+        </property>
+        <property name="city">
+            <column name="City"/>
+        </property>
+        <property name="zipcode">
+            <column name="Zipcode"/>
+        </property>
+
+        <union-subclass name="hr.algebra.models.OrderShippingDetails" table="OrderShippingDetails">
+            <property name="collectorFirstName">
+                <column name="CollectorFirstName"/>
+            </property>
+            <property name="collectorLastName">
+                <column name="CollectorLastName"/>
+            </property>
+            <property name="collectorPhoneNumber">
+                <column name="CollectorPhoneNumber"/>
+            </property>
+            <many-to-one name="shippingMethod" class="hr.algebra.models.OrderShippingMethod" lazy="false">
+                <column name="ShippingMethodId" />
+            </many-to-one>
+        </union-subclass>
+
+        <union-subclass name="hr.algebra.models.OrderPickupDetails" table="OrderPickupDetails" lazy="false">
+            <property name="shopName">
+                <column name="ShopName"/>
+            </property>
+        </union-subclass>
+    </class>
+</hibernate-mapping>

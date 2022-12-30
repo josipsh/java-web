@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "https://hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="hr.algebra.models.Basket" table="Basket">
+        <id name="id">
+            <column name="Id"/>
+            <generator class="identity"/>
+        </id>
+
+        <property name="quantity">
+            <column name="Quantity"/>
+        </property>
+
+        <many-to-one name="product" class="hr.algebra.models.Product" lazy="false">
+            <column name="ProductId" />
+        </many-to-one>
+        <many-to-one name="user" class="hr.algebra.models.User" lazy="false">
+            <column name="UserId" />
+        </many-to-one>
+    </class>
+</hibernate-mapping>

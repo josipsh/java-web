@@ -22,5 +22,11 @@
         <mapping resource="config/hibernate/mssql/product.hbm.xml" />
         <mapping resource="config/hibernate/mssql/category.hbm.xml" />
         <mapping resource="config/hibernate/mssql/subcategory.hbm.xml" />
+        <mapping resource="config/hibernate/mssql/basket.hbm.xml" />
+        <mapping resource="config/hibernate/mssql/order.hbm.xml" />
+        <mapping resource="config/hibernate/mssql/orderDeliveryDetails.hbm.xml" />
+        <mapping resource="config/hibernate/mssql/orderShippingMethod.hbm.xml" />
+        <mapping resource="config/hibernate/mssql/paymentMethod.hbm.xml" />
+        <mapping resource="config/hibernate/mssql/user.hbm.xml" />
     </session-factory>
 </hibernate-configuration>
