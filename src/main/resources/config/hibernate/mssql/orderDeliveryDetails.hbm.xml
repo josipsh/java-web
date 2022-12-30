@@ -19,7 +19,8 @@
             <column name="Zipcode"/>
         </property>
 
-        <union-subclass name="hr.algebra.models.OrderShippingDetails" table="OrderShippingDetails">
+        <joined-subclass name="hr.algebra.models.OrderShippingDetails" table="OrderShippingDetails">
+            <key column="Id" />
             <property name="collectorFirstName">
                 <column name="CollectorFirstName"/>
             </property>
@@ -32,12 +33,13 @@
             <many-to-one name="shippingMethod" class="hr.algebra.models.OrderShippingMethod" lazy="false">
                 <column name="ShippingMethodId" />
             </many-to-one>
-        </union-subclass>
+        </joined-subclass>
 
-        <union-subclass name="hr.algebra.models.OrderPickupDetails" table="OrderPickupDetails" lazy="false">
+        <joined-subclass name="hr.algebra.models.OrderPickupDetails" table="OrderPickupDetails" lazy="false">
+            <key column="Id" />
             <property name="shopName">
                 <column name="ShopName"/>
             </property>
-        </union-subclass>
+        </joined-subclass>
     </class>
 </hibernate-mapping>

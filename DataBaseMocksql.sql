@@ -42,3 +42,22 @@ insert Users ([FirstName], [LastName], [Email], [Password], [RoleId]) values ('I
 insert Users ([FirstName], [LastName], [Email], [Password], [RoleId]) values ('Iva', 'Ivic', 'iva.ivic@gmail.com', 'test123', 1)
 insert Users ([FirstName], [LastName], [Email], [Password], [RoleId]) values ('Lea', 'Leic', 'lea.leic@gmail.com', 'test123', 1)
 go
+
+insert PaymentMethod ([TypeName]) values ('Cash')		-- id 1
+insert PaymentMethod ([TypeName]) values ('PayPal')		-- id 2
+go
+
+insert Basket ([Quantity], [UserId], [ProductId]) values (1, 2, 1)
+insert Basket ([Quantity], [UserId], [ProductId]) values (2, 2, 2)
+insert Basket ([Quantity], [UserId], [ProductId]) values (3, 2, 3)
+insert Basket ([Quantity], [UserId], [ProductId]) values (1, 3, 4)
+insert Basket ([Quantity], [UserId], [ProductId]) values (1, 3, 5)
+insert Basket ([Quantity], [UserId], [ProductId]) values (5, 3, 6)
+insert Basket ([Quantity], [UserId], [ProductId]) values (1, 4, 7)
+insert Basket ([Quantity], [UserId], [ProductId]) values (2, 4, 8)
+insert Basket ([Quantity], [UserId], [ProductId]) values (1, 4, 9)
+go
+
+insert OrderShippingMethod ([Name]) values ('GSL')			-- id 1
+insert OrderShippingMethod ([Name]) values ('Overseass')	-- id 2
+go

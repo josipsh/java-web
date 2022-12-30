@@ -3,7 +3,7 @@
         "https://hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 
 <hibernate-mapping>
-    <class name="hr.algebra.models.Order" table="Order">
+    <class name="hr.algebra.models.Order" table="Orders">
         <id name="id">
             <column name="Id"/>
             <generator class="identity"/>
@@ -15,14 +15,14 @@
         <many-to-one name="paymentMethod" class="hr.algebra.models.PaymentMethod" lazy="false">
             <column name="PaymentMethodId" />
         </many-to-one>
-        <many-to-one name="deliveryDetails" class="hr.algebra.models.OrderDeliveryDetails" lazy="false">
+        <many-to-one name="deliveryDetails" class="hr.algebra.models.OrderDeliveryDetails" cascade="all" lazy="false">
             <column name="DeliveryDetailsId" />
         </many-to-one>
-        <set name="products" table="Product" fetch="select" lazy="false">
+        <set name="products" table="OrderProduct" fetch="select" lazy="false">
             <key>
-                <column name="ProductId" not-null="true"/>
+                <column name="OrderId" not-null="true"/>
             </key>
-            <one-to-many class="hr.algebra.models.Product" />
+            <many-to-many class="hr.algebra.models.Product" column="ProductId" />
         </set>
     </class>
 </hibernate-mapping>

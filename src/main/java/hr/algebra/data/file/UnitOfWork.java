@@ -4,9 +4,7 @@ import hr.algebra.data.IBlobRepository;
 import hr.algebra.data.IProductRepository;
 import hr.algebra.data.IRepository;
 import hr.algebra.data.IUnitOfWork;
-import hr.algebra.models.Category;
-import hr.algebra.models.SubCategory;
-import hr.algebra.models.User;
+import hr.algebra.models.*;
 
 public class UnitOfWork implements IUnitOfWork {
 
@@ -33,5 +31,25 @@ public class UnitOfWork implements IUnitOfWork {
     @Override
     public IBlobRepository blobRepository() {
         return new BlobRepository();
+    }
+
+    @Override
+    public IRepository<Basket> baskets() {
+        return null;
+    }
+
+    @Override
+    public IRepository<Order> orders() {
+        return null;
+    }
+
+    @Override
+    public IRepository<PaymentMethod> paymentMethods() {
+        return null;
+    }
+
+    @Override
+    public IRepository<OrderShippingMethod> orderShippingMethods() {
+        return null;
     }
 }

@@ -1,8 +1,6 @@
 package hr.algebra.data;
 
-import hr.algebra.models.Category;
-import hr.algebra.models.SubCategory;
-import hr.algebra.models.User;
+import hr.algebra.models.*;
 
 public interface IUnitOfWork {
     IRepository<User> users();
@@ -14,4 +12,12 @@ public interface IUnitOfWork {
     IRepository<Category> categories();
 
     IBlobRepository blobRepository();
+
+    IRepository<Basket> baskets();
+
+    IRepository<Order> orders();
+
+    IRepository<PaymentMethod> paymentMethods();
+
+    IRepository<OrderShippingMethod> orderShippingMethods();
 }

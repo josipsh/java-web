@@ -41,7 +41,7 @@ public class UserRepositoryImpl extends UnsafeRepository<User> implements IRepos
 
             SQLQuery query = session.createSQLQuery("select {u.*} from Users as u where u.Id = ?");
             query.addEntity("u", User.class);
-            query.setParameter(1, id);
+            query.setParameter(0, id);
 
             List<User> result = query.list();
             if (result.size() != 1){

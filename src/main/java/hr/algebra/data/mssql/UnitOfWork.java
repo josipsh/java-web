@@ -28,4 +28,24 @@ public class UnitOfWork  implements IUnitOfWork {
     public IBlobRepository blobRepository() {
         return new BlobRepository();
     }
+
+    @Override
+    public IRepository<Basket> baskets() {
+        return new BasketRepositoryImpl();
+    }
+
+    @Override
+    public IRepository<Order> orders() {
+        return new OrderRepositoryImpl();
+    }
+
+    @Override
+    public IRepository<PaymentMethod> paymentMethods() {
+        return new PaymentMethodRepositoryImpl();
+    }
+
+    @Override
+    public IRepository<OrderShippingMethod> orderShippingMethods() {
+        return new OrderShippingMethodRepositoryImpl();
+    }
 }

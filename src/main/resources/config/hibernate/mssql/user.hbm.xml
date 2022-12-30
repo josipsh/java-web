@@ -13,10 +13,10 @@
             <column name="FirstName"/>
         </property>
         <property name="lastName">
-            <column name="FirstName"/>
+            <column name="LastName"/>
         </property>
         <property name="email">
-            <column name="FirstName"/>
+            <column name="Email"/>
         </property>
     </class>
 </hibernate-mapping>

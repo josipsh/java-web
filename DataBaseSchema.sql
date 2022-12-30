@@ -124,6 +124,6 @@ go
 create table OrderProduct(
 	Id int primary key identity,
 	OrderId int foreign key references Orders(Id),
-	Product int foreign key references Product(Id)
+	ProductId int foreign key references Product(Id)
 )
 go
