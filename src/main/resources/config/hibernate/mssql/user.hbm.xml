@@ -18,5 +18,8 @@
         <property name="email">
             <column name="Email"/>
         </property>
+        <many-to-one name="role"  class="hr.algebra.models.UserRole" lazy="false">
+            <column name="RoleId"/>
+        </many-to-one>
     </class>
 </hibernate-mapping>

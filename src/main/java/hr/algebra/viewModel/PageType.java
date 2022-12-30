@@ -4,6 +4,10 @@ public enum PageType {
     Home(0),
     Cart(1),
     Profile (2),
+    LoginHistory (3),
+    OrderHistory (4),
+    ProductEditor (5),
+    CategoryEditor (6),
     Register(-1),
     Login(-2);
 

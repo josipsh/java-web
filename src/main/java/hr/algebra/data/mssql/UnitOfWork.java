@@ -7,7 +7,7 @@ import hr.algebra.data.file.BlobRepository;
 
 public class UnitOfWork  implements IUnitOfWork {
     @Override
-    public IRepository<User> users() {
+    public IUserRepository users() {
         return new UserRepositoryImpl();
     }
 

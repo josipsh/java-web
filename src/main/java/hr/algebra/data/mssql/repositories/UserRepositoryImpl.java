@@ -1,6 +1,6 @@
 package hr.algebra.data.mssql.repositories;
 
-import hr.algebra.data.IRepository;
+import hr.algebra.data.IUserRepository;
 import hr.algebra.data.mssql.SessionFactorySingleton;
 import hr.algebra.models.User;
 import hr.algebra.utils.Exceptions.DataBaseException;
@@ -9,7 +9,7 @@ import org.hibernate.Session;
 
 import java.util.List;
 
-public class UserRepositoryImpl extends UnsafeRepository<User> implements IRepository<User> {
+public class UserRepositoryImpl extends UnsafeRepository<User> implements IUserRepository {
     @Override
     public List<User> getAll() throws DataBaseException {
         Session session = SessionFactorySingleton.getSessionFactory().getCurrentSession();
@@ -58,5 +58,13 @@ public class UserRepositoryImpl extends UnsafeRepository<User> implements IRepos
                 session.close();
             }
         }
+    }
+
+    @Override
+    public User getByEmail(String email) throws DataBaseException {
+        return super.getByParameterHelper(
+                "select * from Users as u where u.Email = ?",
+                User.class,
+                email);
     }
 }

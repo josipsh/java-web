@@ -5,7 +5,7 @@ public class User {
     private String firstName;
     private String lastName;
     private String email;
-    private String role;
+    private UserRole role;
 
     public int getId() {
         return id;
@@ -23,7 +23,7 @@ public class User {
         return email;
     }
 
-    public String getRole() { return role; }
+    public UserRole getRole() { return role; }
 
     public void setId(int id) {
         this.id = id;
@@ -41,5 +41,5 @@ public class User {
         this.email = email;
     }
 
-    public void setRole(String role) { this.role = role; }
+    public void setRole(UserRole role) { this.role = role; }
 }

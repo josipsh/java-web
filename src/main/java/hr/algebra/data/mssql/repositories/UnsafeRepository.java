@@ -81,6 +81,32 @@ public class UnsafeRepository<T> implements IUnsafeRepository<T> {
         }
     }
 
+    protected T getByParameterHelper(String quesryString, Class classType, String id) throws DataBaseException {
+        Session session = SessionFactorySingleton.getSessionFactory().getCurrentSession();
+        try {
+            session.beginTransaction();
+
+            SQLQuery query = session.createSQLQuery(quesryString);
+            query.addEntity(classType);
+            query.setParameter(0, id);
+
+            List<T> result = query.list();
+            if (result.size() != 1){
+                throw new DataBaseException("There is either too little or many records");
+            }
+
+            session.getTransaction().commit();
+            return result.get(0);
+        } catch (Throwable ex) {
+            session.getTransaction().rollback();
+            throw new DataBaseException("An Error occurred", ex);
+        } finally {
+            if (session.isOpen()) {
+                session.close();
+            }
+        }
+    }
+
     @Override
     public void add(T entity) throws DataBaseException {
         Session session = SessionFactorySingleton.getSessionFactory().getCurrentSession();

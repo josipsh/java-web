@@ -56,7 +56,6 @@ public class AuthServlet extends HttpServlet {
     private void login(HttpServletRequest req) {
         User user = new User();
         user.setEmail(req.getParameter("email"));
-        user.setRole("Basic");
 
         req.getSession().setAttribute("user", user);
     }
@@ -66,7 +65,6 @@ public class AuthServlet extends HttpServlet {
         user.setFirstName(req.getParameter("firstName"));
         user.setLastName(req.getParameter("lastName"));
         user.setEmail(req.getParameter("email"));
-        user.setRole("Basic");
 
         uow.users().add(user);
     }

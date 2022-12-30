@@ -28,6 +28,7 @@
         <mapping resource="config/hibernate/mssql/orderShippingMethod.hbm.xml" />
         <mapping resource="config/hibernate/mssql/paymentMethod.hbm.xml" />
         <mapping resource="config/hibernate/mssql/user.hbm.xml" />
+        <mapping resource="config/hibernate/mssql/userRole.hbm.xml" />
         <mapping resource="config/hibernate/mssql/loginRecord.hbm.xml" />
     </session-factory>
 </hibernate-configuration>

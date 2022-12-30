@@ -3,7 +3,7 @@ package hr.algebra.data;
 import hr.algebra.models.*;
 
 public interface IUnitOfWork {
-    IRepository<User> users();
+    IUserRepository users();
 
     IProductRepository products();
 
