@@ -20,7 +20,7 @@
         <property name="hibernate.dialect">org.hibernate.dialect.SQLServerDialect</property>
 
         <mapping resource="config/hibernate/mssql/product.hbm.xml" />
-        <mapping resource="config/hibernate/mssql/Category.hbm.xml" />
+        <mapping resource="config/hibernate/mssql/category.hbm.xml" />
         <mapping resource="config/hibernate/mssql/subcategory.hbm.xml" />
     </session-factory>
 </hibernate-configuration>
