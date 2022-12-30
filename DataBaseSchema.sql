@@ -127,3 +127,11 @@ create table OrderProduct(
 	ProductId int foreign key references Product(Id)
 )
 go
+
+create table LoginRecordHistory(
+	Id int primary key identity,
+	IpAddress nvarchar(40) not null,
+	LoggedInAt DATETIME,
+	UserId int foreign key references Users(Id)
+)
+go

@@ -61,3 +61,54 @@ go
 insert OrderShippingMethod ([Name]) values ('GSL')			-- id 1
 insert OrderShippingMethod ([Name]) values ('Overseass')	-- id 2
 go
+
+insert OrderDeliveryDetails ([StreetAddress], [City], [Zipcode]) values ('Strojarska 22', 'Zagreb', '10 000')		-- id 1
+insert OrderDeliveryDetails ([StreetAddress], [City], [Zipcode]) values ('Glavna ulica 3', 'Varazdin', '42 000')	-- id 2
+insert OrderDeliveryDetails ([StreetAddress], [City], [Zipcode]) values ('Ilica 44', 'Zagreb', '10 000')			-- id 3
+insert OrderDeliveryDetails ([StreetAddress], [City], [Zipcode]) values ('Ilica 256', 'Zagreb', '10 000')			-- id 4
+go
+
+insert OrderPickupDetails ([Id], [ShopName]) values (1, 'Trgovina Zagreb')
+insert OrderPickupDetails ([Id], [ShopName]) values (2, 'TrgoviNA Varazdin')
+
+insert OrderShippingDetails ([Id], [CollectorFirstName], [CollectorLastName], [CollectorPhoneNumber], [ShippingMethodId]) values (3, 'Marko', 'Maric', '091 8524 452', 1)
+insert OrderShippingDetails ([Id], [CollectorFirstName], [CollectorLastName], [CollectorPhoneNumber], [ShippingMethodId]) values (4, 'Ivko', 'Ivanic', '098 1256 789', 2)
+go
+
+insert Orders ([UserId], [PaymentMethodId], [DeliveryDetailsId]) values (2, 1, 1)	-- id 1
+insert Orders ([UserId], [PaymentMethodId], [DeliveryDetailsId]) values (2, 2, 2)	-- id 2
+insert Orders ([UserId], [PaymentMethodId], [DeliveryDetailsId]) values (3, 2, 3)	-- id 3
+insert Orders ([UserId], [PaymentMethodId], [DeliveryDetailsId]) values (4, 1, 4)	-- id 4
+go
+
+insert OrderProduct ([OrderId], [ProductId]) values (1, 1)
+insert OrderProduct ([OrderId], [ProductId]) values (1, 2)
+insert OrderProduct ([OrderId], [ProductId]) values (1, 3)
+insert OrderProduct ([OrderId], [ProductId]) values (1, 4)
+insert OrderProduct ([OrderId], [ProductId]) values (1, 10)
+insert OrderProduct ([OrderId], [ProductId]) values (1, 15)
+
+insert OrderProduct ([OrderId], [ProductId]) values (2, 5)
+insert OrderProduct ([OrderId], [ProductId]) values (2, 6)
+insert OrderProduct ([OrderId], [ProductId]) values (2, 7)
+insert OrderProduct ([OrderId], [ProductId]) values (2, 1)
+insert OrderProduct ([OrderId], [ProductId]) values (2, 10)
+insert OrderProduct ([OrderId], [ProductId]) values (2, 16)
+
+insert OrderProduct ([OrderId], [ProductId]) values (3, 9)
+insert OrderProduct ([OrderId], [ProductId]) values (3, 10)
+insert OrderProduct ([OrderId], [ProductId]) values (3, 11)
+insert OrderProduct ([OrderId], [ProductId]) values (3, 12)
+
+insert OrderProduct ([OrderId], [ProductId]) values (4, 13)
+insert OrderProduct ([OrderId], [ProductId]) values (4, 14)
+insert OrderProduct ([OrderId], [ProductId]) values (4, 15)
+insert OrderProduct ([OrderId], [ProductId]) values (4, 16)
+go
+
+insert LoginRecordHistory ([IpAddress], [LoggedInAt], [UserId]) values ('192.168.5.4', '2022-11-09 15:45:21', 2)
+insert LoginRecordHistory ([IpAddress], [LoggedInAt], [UserId]) values ('192.168.10.40', '2022-11-01 15:45:21', 2)
+insert LoginRecordHistory ([IpAddress], [LoggedInAt], [UserId]) values ('192.168.50.44', '2022-11-10 14:45:21', 3)
+insert LoginRecordHistory ([IpAddress], [LoggedInAt], [UserId]) values ('192.168.15.45', '2022-11-15 18:45:21', 3)
+insert LoginRecordHistory ([IpAddress], [LoggedInAt], [UserId]) values ('192.168.45.45', '2022-11-25 11:45:21', 4)
+insert LoginRecordHistory ([IpAddress], [LoggedInAt], [UserId]) values ('192.168.96.42', '2022-11-15 19:45:21', 4)

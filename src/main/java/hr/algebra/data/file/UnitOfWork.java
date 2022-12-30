@@ -52,4 +52,9 @@ public class UnitOfWork implements IUnitOfWork {
     public IRepository<OrderShippingMethod> orderShippingMethods() {
         return null;
     }
+
+    @Override
+    public IRepository<LoginRecord> loginRecords() {
+        return null;
+    }
 }
