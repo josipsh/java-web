@@ -1,5 +1,5 @@
-<%@ page import="hr.algebra.viewModel.PageType" %>
 <%@ page contentType="text/html;charset=UTF-8" %>
+<%@ page import="hr.algebra.viewModel.PageType" %>
 <%@ taglib prefix="algebra" uri="https://algebra.hr/web-shop" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
