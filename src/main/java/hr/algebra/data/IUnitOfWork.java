@@ -11,8 +11,6 @@ public interface IUnitOfWork {
 
     IRepository<Category> categories();
 
-    IBlobRepository blobRepository();
-
     IRepository<Basket> baskets();
 
     IRepository<Order> orders();

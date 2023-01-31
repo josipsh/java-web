@@ -1,9 +1,11 @@
 package hr.algebra.data.mssql;
 
-import hr.algebra.data.*;
+import hr.algebra.data.IProductRepository;
+import hr.algebra.data.IRepository;
+import hr.algebra.data.IUnitOfWork;
+import hr.algebra.data.IUserRepository;
 import hr.algebra.data.mssql.repositories.*;
 import hr.algebra.models.*;
-import hr.algebra.data.file.BlobRepository;
 
 public class UnitOfWork  implements IUnitOfWork {
     @Override
@@ -22,11 +24,6 @@ public class UnitOfWork  implements IUnitOfWork {
     @Override
     public IRepository<Category> categories() {
         return new CategoryRepositoryImpl();
-    }
-
-    @Override
-    public IBlobRepository blobRepository() {
-        return new BlobRepository();
     }
 
     @Override

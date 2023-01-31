@@ -1,6 +1,6 @@
 package hr.algebra.servlets;
 
-import hr.algebra.data.IUnitOfWork;
+import hr.algebra.data.IBlobRepository;
 import hr.algebra.data.RepoFactory;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.MultipartConfig;
@@ -17,10 +17,10 @@ import java.io.OutputStream;
 @WebServlet(name = "BlobServlet", value = "/blob")
 @MultipartConfig
 public class BlobServlet extends HttpServlet {
-    private final IUnitOfWork uow;
+    private final IBlobRepository blobRepository;
 
     public BlobServlet() {
-        uow = RepoFactory.getUnitOfWork();
+        blobRepository = RepoFactory.getBlobRepository();
     }
 
     @Override
@@ -31,7 +31,7 @@ public class BlobServlet extends HttpServlet {
             return;
         }
 
-        File file = uow.blobRepository().getFile(blobName);
+        File file = blobRepository.getFile(blobName);
         if (file == null){
             res.setStatus(HttpServletResponse.SC_NOT_FOUND);
             return;
@@ -59,6 +59,6 @@ public class BlobServlet extends HttpServlet {
             return;
         }
 
-        uow.blobRepository().saveFile(blobPart.getInputStream(), productId);
+        blobRepository.saveFile(blobPart.getInputStream(), productId);
     }
 }

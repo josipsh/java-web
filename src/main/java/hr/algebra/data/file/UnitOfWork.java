@@ -26,11 +26,6 @@ public class UnitOfWork implements IUnitOfWork {
     }
 
     @Override
-    public IBlobRepository blobRepository() {
-        return new BlobRepository();
-    }
-
-    @Override
     public IRepository<Basket> baskets() {
         return null;
     }
