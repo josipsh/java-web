@@ -86,7 +86,7 @@
                         </a>
                     </li>
                 </c:if>
-                <c:if test="${user == null}">
+                <c:if test="${user != null}">
                     <li>
                         <a href="${pageContext.request.contextPath}/auth/logout"
                            class="block p-4 text-light-500 hover:text-light-900">
