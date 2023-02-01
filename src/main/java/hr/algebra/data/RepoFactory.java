@@ -1,7 +1,8 @@
 package hr.algebra.data;
 
-import hr.algebra.data.file.BlobRepository;
+import hr.algebra.data.azureBlobStorage.AzureBlobStorageRepository;
 import hr.algebra.data.mssql.UnitOfWork;
+import hr.algebra.utils.Exceptions.BlobException;
 
 public class RepoFactory {
 
@@ -9,7 +10,7 @@ public class RepoFactory {
         return new UnitOfWork();
     }
 
-    public static IBlobRepository getBlobRepository(){
-        return new BlobRepository();
+    public static IBlobRepository getBlobRepository() throws BlobException {
+        return new AzureBlobStorageRepository();
     }
 }

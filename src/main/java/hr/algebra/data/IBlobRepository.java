@@ -1,11 +1,10 @@
 package hr.algebra.data;
 
-import java.io.File;
-import java.io.IOException;
+import hr.algebra.utils.Exceptions.BlobException;
 import java.io.InputStream;
 
 public interface IBlobRepository {
-    File getFile(String name);
+    byte[] getFile(String name) throws BlobException;
 
-    void saveFile(InputStream inputStream, String ProductId) throws IOException;
+    void saveFile(InputStream inputStream, String name) throws BlobException;
 }
