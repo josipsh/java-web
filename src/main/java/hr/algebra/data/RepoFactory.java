@@ -2,7 +2,7 @@ package hr.algebra.data;
 
 import hr.algebra.data.azureBlobStorage.AzureBlobStorageRepository;
 import hr.algebra.data.mssql.UnitOfWork;
-import hr.algebra.utils.Exceptions.BlobException;
+import hr.algebra.utils.exceptions.BlobException;
 
 public class RepoFactory {
 

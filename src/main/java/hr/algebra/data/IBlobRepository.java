@@ -1,6 +1,6 @@
 package hr.algebra.data;
 
-import hr.algebra.utils.Exceptions.BlobException;
+import hr.algebra.utils.exceptions.BlobException;
 import java.io.InputStream;
 
 public interface IBlobRepository {

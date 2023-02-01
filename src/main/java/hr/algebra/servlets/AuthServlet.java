@@ -3,7 +3,7 @@ package hr.algebra.servlets;
 import hr.algebra.data.IUnitOfWork;
 import hr.algebra.data.RepoFactory;
 import hr.algebra.models.User;
-import hr.algebra.utils.Exceptions.DataBaseException;
+import hr.algebra.utils.exceptions.DataBaseException;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;

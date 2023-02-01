@@ -1,6 +1,6 @@
 package hr.algebra.data;
 
-import hr.algebra.utils.Exceptions.DataBaseException;
+import hr.algebra.utils.exceptions.DataBaseException;
 
 import java.util.List;
 

@@ -3,7 +3,7 @@ package hr.algebra.data.mssql.repositories;
 import hr.algebra.data.IUserRepository;
 import hr.algebra.data.mssql.SessionFactorySingleton;
 import hr.algebra.models.User;
-import hr.algebra.utils.Exceptions.DataBaseException;
+import hr.algebra.utils.exceptions.DataBaseException;
 import org.hibernate.SQLQuery;
 import org.hibernate.Session;
 

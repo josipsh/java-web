@@ -2,7 +2,7 @@ package hr.algebra.servlets;
 
 import hr.algebra.data.IBlobRepository;
 import hr.algebra.data.RepoFactory;
-import hr.algebra.utils.Exceptions.BlobException;
+import hr.algebra.utils.exceptions.BlobException;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;

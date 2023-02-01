@@ -1,4 +1,4 @@
-package hr.algebra.utils.Exceptions;
+package hr.algebra.utils.exceptions;
 
 public class DataBaseException extends Exception {
     public DataBaseException() {

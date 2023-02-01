@@ -2,7 +2,7 @@ package hr.algebra.data.mssql.repositories;
 
 import hr.algebra.data.IRepository;
 import hr.algebra.models.Category;
-import hr.algebra.utils.Exceptions.DataBaseException;
+import hr.algebra.utils.exceptions.DataBaseException;
 
 import java.util.List;
 

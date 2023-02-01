@@ -1,7 +1,7 @@
 package hr.algebra.data.file;
 
 import hr.algebra.data.IBlobRepository;
-import hr.algebra.utils.Exceptions.BlobException;
+import hr.algebra.utils.exceptions.BlobException;
 import java.io.*;
 import java.nio.file.Files;
 

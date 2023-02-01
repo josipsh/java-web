@@ -5,7 +5,7 @@ import com.azure.storage.blob.BlobContainerClient;
 import com.azure.storage.blob.BlobServiceClient;
 import com.azure.storage.blob.BlobServiceClientBuilder;
 import hr.algebra.data.IBlobRepository;
-import hr.algebra.utils.Exceptions.BlobException;
+import hr.algebra.utils.exceptions.BlobException;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
