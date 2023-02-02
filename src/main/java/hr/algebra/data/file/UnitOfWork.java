@@ -26,7 +26,7 @@ public class UnitOfWork implements IUnitOfWork {
     }
 
     @Override
-    public IRepository<Basket> baskets() {
+    public IBasketRepository baskets() {
         return null;
     }
 

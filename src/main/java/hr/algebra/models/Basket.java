@@ -1,5 +1,7 @@
 package hr.algebra.models;
 
+import hr.algebra.viewModel.BasketViewModel;
+
 public class Basket {
     private int id;
     private int quantity;
@@ -7,6 +9,13 @@ public class Basket {
     private Product product;
 
     public Basket() {
+    }
+
+    public Basket(int id, int quantity, User user, Product product) {
+        this.id = id;
+        this.quantity = quantity;
+        this.user = user;
+        this.product = product;
     }
 
     public int getId() {
@@ -39,5 +48,14 @@ public class Basket {
 
     public void setProduct(Product product) {
         this.product = product;
+    }
+
+    public BasketViewModel toViewModel(boolean isSaved){
+        return new BasketViewModel(
+                id,
+                quantity,
+                user,
+                product,
+                isSaved);
     }
 }

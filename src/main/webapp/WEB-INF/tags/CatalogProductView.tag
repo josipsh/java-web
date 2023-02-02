@@ -26,7 +26,7 @@
 </div>
 <script>
     function addToCart${id}() {
-        const url = "${pageContext.request.contextPath}/cart?productId=1&quantity=2";
+        const url = "${pageContext.request.contextPath}/cart?productId=${id}&quantity=1";
         let request = new XMLHttpRequest();
         request.open('POST', url, true);
         request.onload = function () {

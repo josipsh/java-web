@@ -11,7 +11,7 @@ public interface IUnitOfWork {
 
     IRepository<Category> categories();
 
-    IRepository<Basket> baskets();
+    IBasketRepository baskets();
 
     IRepository<Order> orders();
 

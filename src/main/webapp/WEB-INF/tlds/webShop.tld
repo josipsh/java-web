@@ -49,6 +49,11 @@
     </tag-file>
 
     <tag-file>
+        <name>CartItem</name>
+        <path>/WEB-INF/tags/CartItem.tag</path>
+    </tag-file>
+
+    <tag-file>
         <name>CartHistoryCard</name>
         <path>/WEB-INF/tags/CartHistoryItem.tag</path>
     </tag-file>
