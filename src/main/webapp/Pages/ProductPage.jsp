@@ -46,8 +46,8 @@
                             <label class="text-lg self-center pr-3 text-light-900 ">
                                 Total price:
                             </label>
-                            <label id="totalPrice" class="text-2xl font-bold text-light-200">
-                                $${sessionScope.product.price}
+                            <label id="total-price" class="text-2xl font-bold text-light-200">
+
                             </label>
                         </div>
                     </div>
@@ -63,7 +63,7 @@
                     </div>
                     <!-- Add BTN -->
                     <div class="flex flex-row flex-wrap justify-end w-full my-3">
-                        <button type="button"
+                        <button type="button" onclick="addToCart()" id="add-btn"
                                 class="w-fit text-primary-light bg-transparent border border-primary-light hover:bg-primary-dark hover:text-primary-light font-medium rounded-2xl text-sm px-5 py-2.5 mr-2">
                             Add to basket
                         </button>
@@ -81,5 +81,37 @@
         </div>
     </div>
 </div>
+<script>
+    let totalPrice = document.querySelector("#total-price")
+    let quantityInputField = document.querySelector("#quantity")
+    totalPrice.innerText = "$" + calculatePrice(quantityInputField.value, ${sessionScope.product.price});
+
+    quantityInputField.addEventListener('change', () => {
+        if (quantityInputField.value < 1) {
+            quantityInputField.value = 1
+            return
+        }
+        totalPrice.innerText = "$" + calculatePrice(quantityInputField.value, ${sessionScope.product.price})
+    })
+
+    function calculatePrice(quantity, price){
+        return quantity * price;
+    }
+
+    function addToCart() {
+        const url = "${pageContext.request.contextPath}/cart?productId=${sessionScope.product.id}&quantity=" + quantityInputField.value;
+        let request = new XMLHttpRequest();
+        request.open('POST', url, true);
+        request.onload = function () {
+            let addBtn = document.querySelector("#add-btn")
+            addBtn.innerText = "Added"
+        };
+
+        request.onerror = function () {
+        };
+
+        request.send();
+    }
+</script>
 </body>
 </html>
