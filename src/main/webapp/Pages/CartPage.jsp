@@ -12,7 +12,7 @@
     <body>
         <algebra:NavigationHeader activePage="<%= PageType.Cart %>"/>
         <div class="flex flex-row justify-center min-h-screen max-h-fit bg-dark-700">
-            <div class="flex flex-col max-w-6xl h-fit m-2 rounded-lg pt-2 pr-4 pb-2 pl-4 bg-dark-400">
+            <div class="flex flex-col w-6xl h-fit m-2 rounded-lg pt-2 pr-4 pb-4 pl-4 bg-dark-400">
                 <c:forEach items="${sessionScope.cart}" var="cartItem">
                     <algebra:CartItem
                             id="${cartItem.id}"
@@ -21,6 +21,25 @@
                             title="${cartItem.product.title}"
                             imageName="${cartItem.product.imageName}" />
                 </c:forEach>
+                <c:if test="${sessionScope.cart.size() == 0 || sessionScope.cart == null}">
+                    <label class="text-lg font-bold text-light-100">
+                        Nothing to show
+                    </label>
+                </c:if>
+            </div>
+            <div class="flex flex-col max-w-6xl h-fit m-2 rounded-lg pt-2 pr-4 pb-4 pl-4 bg-dark-400">
+                <div>
+                    <label class="text-lg font-bold text-light-100">
+                        Total checkout price:
+                    </label>
+                    <label class="text-2xl font-bold text-light-100 ml-4">
+                        $${sessionScope.totalPrice}
+                    </label>
+                </div>
+                <button type="button"
+                        class="text-primary-light bg-transparent border border-primary hover:bg-primary-dark hover:text-primary-light font-medium rounded-2xl text-lg py-2 mt-4">
+                    CHECKOUT
+                </button>
             </div>
         </div>
     </body>

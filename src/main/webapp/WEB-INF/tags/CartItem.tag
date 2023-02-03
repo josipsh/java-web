@@ -58,14 +58,14 @@
 <script>
     let totalPrice${id} = document.querySelector("#total-price-${id}")
     let quantityInputField${id} = document.querySelector("#quantity-${id}")
-    totalPrice${id}.innerText = ${numberOfItems} * ${itemPrice}
+    totalPrice${id}.innerText = "$" + calculatePrice(quantityInputField${id}.value, ${itemPrice});
 
     quantityInputField${id}.addEventListener('change', () => {
         if (quantityInputField${id}.value < 1) {
             quantityInputField${id}.value = 1
             return
         }
-        totalPrice${id}.innerText = quantityInputField${id}.value * ${itemPrice}
+        totalPrice${id}.innerText = "$" + calculatePrice(quantityInputField${id}.value, ${itemPrice})
 
         const url${id} = "${pageContext.request.contextPath}/cart?basketId=${id}&quantity=" + quantityInputField${id}.value;
         let request${id} = new XMLHttpRequest();
@@ -79,6 +79,7 @@
 
         request${id}.send();
     })
+
     function deleteFormCart${id}() {
         const url = "${pageContext.request.contextPath}/cart?basketId=${id}";
         let request = new XMLHttpRequest();
@@ -91,5 +92,9 @@
         };
 
         request.send();
+    }
+
+    function calculatePrice(quantity, price){
+        return quantity * price;
     }
 </script>

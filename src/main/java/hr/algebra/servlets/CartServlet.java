@@ -31,6 +31,9 @@ public class CartServlet extends HttpServlet {
     public void doGet(HttpServletRequest req, HttpServletResponse res) throws IOException, ServletException {
         res.setContentType("text/html");
 
+        List<BasketViewModel> cart = (List<BasketViewModel>) req.getSession().getAttribute("cart");
+        req.getSession().setAttribute("totalPrice", calculateTotalPrice(cart));
+
         RequestDispatcher requestDispatcher = req.getRequestDispatcher("Pages/CartPage.jsp");
         requestDispatcher.forward(req, res);
     }
@@ -82,5 +85,19 @@ public class CartServlet extends HttpServlet {
 
         Optional<BasketViewModel> basketItem = cart.stream().filter(x -> x.getId() == basketId).findFirst();
         basketItem.ifPresent(cart::remove);
+    }
+
+
+    private float calculateTotalPrice(List<BasketViewModel> cart) {
+        if (cart == null) {
+            return 0;
+        }
+        float totalPrice = 0;
+
+        for (BasketViewModel b: cart) {
+            totalPrice += b.getQuantity() * b.getProduct().getPrice();
+        }
+
+        return totalPrice;
     }
 }
