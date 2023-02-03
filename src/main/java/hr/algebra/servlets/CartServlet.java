@@ -6,7 +6,6 @@ import hr.algebra.models.Product;
 import hr.algebra.utils.exceptions.DataBaseException;
 import hr.algebra.utils.helpers.RouteParameterHelper;
 import hr.algebra.viewModel.BasketViewModel;
-
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -57,6 +56,23 @@ public class CartServlet extends HttpServlet {
     }
 
     @Override
+    protected void doPut(HttpServletRequest req, HttpServletResponse resp) {
+        int basketId = RouteParameterHelper.getIntParameter(req, "basketId");
+        int quantity = RouteParameterHelper.getIntParameter(req, "quantity");
+
+        List<BasketViewModel> cart = (List<BasketViewModel>) req.getSession().getAttribute("cart");
+        if (cart == null) {
+            return;
+        }
+
+        Optional<BasketViewModel> basketItem = cart.stream().filter(x -> x.getId() == basketId).findFirst();
+        if (basketItem.isPresent()){
+            BasketViewModel item = basketItem.get();
+            item.setQuantity(quantity);
+        }
+    }
+
+    @Override
     protected void doDelete(HttpServletRequest req, HttpServletResponse res) {
         int basketId = RouteParameterHelper.getIntParameter(req, "basketId");
         List<BasketViewModel> cart = (List<BasketViewModel>) req.getSession().getAttribute("cart");
@@ -65,9 +81,6 @@ public class CartServlet extends HttpServlet {
         }
 
         Optional<BasketViewModel> basketItem = cart.stream().filter(x -> x.getId() == basketId).findFirst();
-        if (basketItem.isPresent()){
-            cart.remove(basketItem.get());
-            req.getSession().setAttribute("cart", cart);
-        }
+        basketItem.ifPresent(cart::remove);
     }
 }

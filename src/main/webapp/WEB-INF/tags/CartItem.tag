@@ -66,7 +66,18 @@
             return
         }
         totalPrice${id}.innerText = quantityInputField${id}.value * ${itemPrice}
-        // send an request
+
+        const url${id} = "${pageContext.request.contextPath}/cart?basketId=${id}&quantity=" + quantityInputField${id}.value;
+        let request${id} = new XMLHttpRequest();
+        request${id}.open('PUT', url${id}, true);
+        request${id}.onload = function () {
+            window.location.reload();
+        };
+
+        request${id}.onerror = function () {
+        };
+
+        request${id}.send();
     })
     function deleteFormCart${id}() {
         const url = "${pageContext.request.contextPath}/cart?basketId=${id}";
