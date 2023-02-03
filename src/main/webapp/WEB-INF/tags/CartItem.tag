@@ -48,7 +48,7 @@
         </div>
         <!-- Add BTN -->
         <div class="flex flex-row flex-wrap justify-end w-full my-3">
-            <button type="button"
+            <button type="button" onclick="deleteFormCart${id}()"
                     class="w-fit text-negative bg-transparent border border-negative hover:bg-primary-dark hover:text-negative font-medium rounded-2xl text-sm px-5 py-2.5 mr-2">
                 Remove
             </button>
@@ -68,4 +68,17 @@
         totalPrice${id}.innerText = quantityInputField${id}.value * ${itemPrice}
         // send an request
     })
+    function deleteFormCart${id}() {
+        const url = "${pageContext.request.contextPath}/cart?basketId=${id}";
+        let request = new XMLHttpRequest();
+        request.open('DELETE', url, true);
+        request.onload = function () {
+            window.location.reload();
+        };
+
+        request.onerror = function () {
+        };
+
+        request.send();
+    }
 </script>
