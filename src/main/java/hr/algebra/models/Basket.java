@@ -46,16 +46,30 @@ public class Basket {
         this.user = user;
     }
 
+    public void setUserIfNull(User user) {
+        if (this.user == null) {
+            this.user = user;
+        }
+    }
+
     public void setProduct(Product product) {
         this.product = product;
     }
 
-    public BasketViewModel toViewModel(boolean isSaved){
+    public BasketViewModel toViewModel(boolean isSaved) {
         return new BasketViewModel(
                 id,
                 quantity,
                 user,
                 product,
                 isSaved);
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj instanceof Basket){
+            return  ((Basket) obj).getId() == id;
+        }
+        return false;
     }
 }

@@ -7,6 +7,9 @@ public class User {
     private String email;
     private UserRole role;
 
+    public User() {
+    }
+
     public int getId() {
         return id;
     }

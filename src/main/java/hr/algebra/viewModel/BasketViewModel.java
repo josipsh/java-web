@@ -21,6 +21,10 @@ public class BasketViewModel extends Basket {
     }
 
     public Basket toModel(){
-        return new Basket(getId(), getQuantity(), getUser(), getProduct());
+        return new Basket(
+                getId(),
+                getQuantity(),
+                getUser(),
+                getProduct());
     }
 }

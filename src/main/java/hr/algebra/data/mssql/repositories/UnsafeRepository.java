@@ -113,7 +113,7 @@ public class UnsafeRepository<T> implements IUnsafeRepository<T> {
         try {
             session.beginTransaction();
 
-            session.persist(entity);
+            session.save(entity);
 
             session.getTransaction().commit();
         } catch (Throwable ex) {
