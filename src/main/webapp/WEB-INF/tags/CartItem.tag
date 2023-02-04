@@ -6,6 +6,7 @@
 <%@attribute name="imageName" required="true" type="java.lang.String" %>
 <%@attribute name="itemPrice" required="true" type="java.lang.String" %>
 <%@attribute name="title" required="true" type="java.lang.String" %>
+<%@attribute name="isEditable" required="true" type="java.lang.Boolean" %>
 
 
 <div class="flex flex-row max-w-6xl m-2 rounded-lg bg-dark-900">
@@ -22,9 +23,17 @@
                 <label for="quantity-${id}" class="text-lg self-center pr-3 text-light-900">
                     Quantity
                 </label>
-                <input type="number" id="quantity-${id}"
-                       class="w-fit block bg-dark-600 text-light-100 placeholder:text-light-900 text-sm rounded-lg p-2.5"
-                       value="${numberOfItems}"/>
+                <c:if test="${isEditable}">
+                    <input type="number" id="quantity-${id}"
+                           class="w-fit block bg-dark-600 text-light-100 placeholder:text-light-900 text-sm rounded-lg p-2.5"
+                           value="${numberOfItems}"/>
+                </c:if>
+                <c:if test="${!isEditable}">
+                    <input type="number" id="quantity-${id}"
+                           class="w-fit block bg-dark-600 text-light-100 placeholder:text-light-900 text-sm rounded-lg p-2.5"
+                           value="${numberOfItems}" disabled/>
+                </c:if>
+
             </div>
             <!-- TotalPrice -->
             <div class="flex flex-row pl-4">
@@ -46,13 +55,15 @@
                 $${itemPrice}
             </label>
         </div>
-        <!-- Add BTN -->
-        <div class="flex flex-row flex-wrap justify-end w-full my-3">
-            <button type="button" onclick="deleteFormCart${id}()"
-                    class="w-fit text-negative bg-transparent border border-negative hover:bg-primary-dark hover:text-negative font-medium rounded-2xl text-sm px-5 py-2.5 mr-2">
-                Remove
-            </button>
-        </div>
+        <c:if test="${isEditable}">
+            <!-- Add BTN -->
+            <div class="flex flex-row flex-wrap justify-end w-full my-3">
+                <button type="button" onclick="deleteFormCart${id}()"
+                        class="w-fit text-negative bg-transparent border border-negative hover:bg-primary-dark hover:text-negative font-medium rounded-2xl text-sm px-5 py-2.5 mr-2">
+                    Remove
+                </button>
+            </div>
+        </c:if>
     </div>
 </div>
 <script>

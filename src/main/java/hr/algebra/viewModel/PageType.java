@@ -9,7 +9,8 @@ public enum PageType {
     ProductEditor (5),
     CategoryEditor (6),
     Register(-1),
-    Login(-2);
+    Login(-2),
+    ORDER(-3);
 
     private final int value;
 

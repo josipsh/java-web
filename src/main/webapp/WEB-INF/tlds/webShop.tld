@@ -62,4 +62,9 @@
         <name>LoginHistoryItem</name>
         <path>/WEB-INF/tags/LoginHistoryItem.tag</path>
     </tag-file>
+
+    <tag-file>
+        <name>ShopNameOption</name>
+        <path>/WEB-INF/tags/ShopOptionItem.tag</path>
+    </tag-file>
 </taglib>
