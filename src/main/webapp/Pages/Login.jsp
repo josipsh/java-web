@@ -37,7 +37,7 @@
 
             <button type="submit"
                     class="w-fit text-secondary-light bg-transparent border border-primary hover:bg-primary-dark hover:text-light-00 font-medium rounded-2xl text-sm px-5 py-2.5 mr-2 mb-2">
-                Register
+                Login
             </button>
         </div>
     </form>
