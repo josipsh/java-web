@@ -16,29 +16,23 @@
 
             <div class="grid grid-cols-2-auto gap-2 h-fit m-2 rounded-lg pt-4 pr-6 pb-4 pl-6 bg-dark-400">
                 <label for="firstName" class="w-full mb-2 text-sm text-right self-center font-medium text-light-200">
-                    First name:
+                    Email:
                 </label>
                 <input type="text" id="firstName"
-                       class="w-96 bg-dark-600 text-light-100 placeholder:text-light-900 text-sm rounded-lg p-2.5" placeholder="Pero"
-                       required />
+                       class="w-96 bg-dark-600 text-light-100 placeholder:text-light-900 text-sm rounded-lg p-2.5" placeholder="pero.peric@gmail.com"
+                       required value="${sessionScope.user.email}" />
                 <label for="middleName" class="w-full mb-2 text-sm text-right self-center font-medium mr-4 text-light-200">
-                    Middle name:
+                    First name:
                 </label>
                 <input type="text" id="middleName"
-                       class="w-96 bg-dark-600 text-light-100 placeholder:text-light-900 text-sm rounded-lg p-2.5" placeholder="Ivan"
-                       required />
+                       class="w-96 bg-dark-600 text-light-100 placeholder:text-light-900 text-sm rounded-lg p-2.5" placeholder="Pero"
+                       required value="${sessionScope.user.firstName}" />
                 <label for="lastName" class="w-full mb-2 text-sm text-right self-center font-medium mr-4 text-light-200">
                     Last name:
                 </label>
                 <input type="text" id="lastName"
                        class="w-96 bg-dark-600 text-light-100 placeholder:text-light-900 text-sm rounded-lg p-2.5" placeholder="Peric"
-                       required />
-                <label for="userName" class="w-full mb-2 text-sm text-right self-center font-medium mr-4 text-light-200">
-                    User name:
-                </label>
-                <input type="text" id="userName"
-                       class="w-96 bg-dark-600 text-light-100 placeholder:text-light-900 text-sm rounded-lg p-2.5"
-                       placeholder="ivan_pero" required />
+                       required value="${sessionScope.user.lastName}" />
                 <div class="col-span-2 flex flex-wrap justify-between pt-3">
                     <button type="button"
                             class="w-fit text-secondary-light bg-transparent border border-negative hover:bg-negative hover:text-white font-medium rounded-2xl text-sm px-5 py-2.5 mr-2 mb-2">
